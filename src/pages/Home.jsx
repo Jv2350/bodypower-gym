@@ -24,6 +24,22 @@ const Home = () => {
     fetchPlans();
   }, []);
 
+  useEffect(() => {
+    testConnection();
+  }, []);
+
+  const testConnection = async () => {
+    const { data, error } = await supabase
+      .from("membership_plans")
+      .select("*");
+
+    if (error) {
+      console.log("Supabase connection failed ❌", error);
+    } else {
+      console.log("Supabase connected ✅", data);
+    }
+  };
+
   const fetchReviews = async () => {
     const { data } = await supabase
       .from('member_reviews')
@@ -176,9 +192,8 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`relative bg-gray-800 rounded-xl overflow-hidden ${
-                  plan.is_popular ? 'ring-2 ring-primary' : ''
-                }`}
+                className={`relative bg-gray-800 rounded-xl overflow-hidden ${plan.is_popular ? 'ring-2 ring-primary' : ''
+                  }`}
               >
                 {plan.is_popular && (
                   <div className="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-bold">
@@ -203,11 +218,10 @@ const Home = () => {
                   </ul>
                   <Link
                     to="/membership"
-                    className={`block text-center w-full py-3 rounded-lg font-bold transition-all duration-300 ${
-                      plan.is_popular
+                    className={`block text-center w-full py-3 rounded-lg font-bold transition-all duration-300 ${plan.is_popular
                         ? 'bg-primary hover:bg-primary-dark text-white'
                         : 'bg-gray-700 hover:bg-primary text-white'
-                    }`}
+                      }`}
                   >
                     Get Started
                   </Link>
