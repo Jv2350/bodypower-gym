@@ -1,21 +1,22 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaDumbbell, FaPhone } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
-import bodypower from "../assets/bodypower.jpg";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FaBars, FaTimes, FaDumbbell, FaPhone } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import bodypower from "../assets/logo.png";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Membership', path: '/membership' },
-    { name: 'Trainers', path: '/trainers' },
-    { name: 'Facilities', path: '/facilities' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Membership", path: "/membership" },
+    { name: "Trainers", path: "/trainers" },
+    { name: "Facilities", path: "/facilities" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -25,15 +26,20 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-primary p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
-              <FaDumbbell className="text-2xl text-white" />
+            <div className="bg-white rounded-lg group-hover:scale-110 transition-transform duration-300 w-12 h-12 flex items-center justify-center overflow-hidden">
+              <img
+                src={bodypower}
+                alt="Body Power Gym Logo"
+                className="w-full h-full object-contain scale-100 transform"
+              />
             </div>
             <div>
-              {/* <img src={bodypower} alt="" /> */}
-              <h1 className="text-xl font-heading font-bold text-white">
+              <h1 className="text-xl font-heading font-bold text-white leading-none">
                 BODY POWER GYM
               </h1>
-              <p className="text-xs text-gray-400">Best Gym in Kamothe</p>
+              <p className="text-[10px] uppercase tracking-wider text-gray-400 mt-1">
+                Best Gym in Kamothe
+              </p>
             </div>
           </Link>
 
@@ -42,10 +48,11 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isActive(item.path)
-                    ? 'bg-primary text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  }`}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  isActive(item.path)
+                    ? "bg-primary text-white"
+                    : "text-gray-300 hover:text-white hover:bg-gray-800"
+                }`}
               >
                 {item.name}
               </Link>
@@ -81,7 +88,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-black/98 border-t border-gray-800 overflow-hidden"
@@ -92,10 +99,11 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${isActive(item.path)
-                      ? 'bg-primary text-white'
-                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                    }`}
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                    isActive(item.path)
+                      ? "bg-primary text-white"
+                      : "text-gray-300 hover:bg-gray-800 hover:text-white"
+                  }`}
                 >
                   {item.name}
                 </Link>
