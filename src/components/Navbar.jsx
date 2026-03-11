@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaDumbbell, FaPhone } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import bodypower from "../assets/bodypower.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +29,7 @@ const Navbar = () => {
               <FaDumbbell className="text-2xl text-white" />
             </div>
             <div>
+              {/* <img src={bodypower} alt="" /> */}
               <h1 className="text-xl font-heading font-bold text-white">
                 BODY POWER GYM
               </h1>
@@ -40,11 +42,10 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  isActive(item.path)
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isActive(item.path)
                     ? 'bg-primary text-white'
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -91,11 +92,10 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    isActive(item.path)
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${isActive(item.path)
                       ? 'bg-primary text-white'
                       : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>

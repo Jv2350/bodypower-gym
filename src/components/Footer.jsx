@@ -10,6 +10,8 @@ import {
   FaTwitter,
   FaWhatsapp
 } from 'react-icons/fa';
+import { FaThreads } from "react-icons/fa6";
+
 
 const Footer = () => {
   const quickLinks = [
@@ -39,26 +41,27 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm mb-4">
-              Transform your body and mind at Navi Mumbai's premier fitness destination.
+              Transform your body and mind at Navi Mumbai's premier fitness
+              destination.
             </p>
             <div className="flex space-x-3">
               <a
-                href="#"
+                href="https://www.facebook.com/bodypowerkamothe/"
                 className="bg-gray-800 hover:bg-primary text-white p-2.5 rounded-lg transition-colors"
               >
                 <FaFacebook size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/bodypowerkamothe/"
                 className="bg-gray-800 hover:bg-primary text-white p-2.5 rounded-lg transition-colors"
               >
                 <FaInstagram size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.threads.com/@bodypowerkamothe"
                 className="bg-gray-800 hover:bg-primary text-white p-2.5 rounded-lg transition-colors"
               >
-                <FaTwitter size={18} />
+                <FaThreads size={18} />
               </a>
               <a
                 href="https://wa.me/917045813690"
@@ -97,8 +100,8 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  1st Floor, Trimurti Enclave, Plot No. 6, Opposite Saksham Mall,
-                  Sector 9, Kamothe, Panvel, Navi Mumbai 410209
+                  1st Floor, Trimurti Enclave, Plot No. 6, Opposite Saksham
+                  Mall, Sector 9, Kamothe, Panvel, Navi Mumbai 410209
                 </span>
               </li>
               <li className="flex items-center space-x-3">
@@ -146,7 +149,8 @@ const Footer = () => {
               <p className="text-xs text-gray-500 mb-2">Rating</p>
               <div className="flex items-center space-x-2">
                 <div className="flex text-yellow-400">
-                  {'★'.repeat(4)}{'☆'.repeat(1)}
+                  {"★".repeat(4)}
+                  {"☆".repeat(1)}
                 </div>
                 <span className="text-sm text-gray-400">4.4 (387 reviews)</span>
               </div>
