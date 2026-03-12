@@ -1,16 +1,107 @@
-# React + Vite
+# Body Power Gym Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Styling-38B2AC)
+![Vite](https://img.shields.io/badge/Vite-Build%20Tool-purple)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
 
-Currently, two official plugins are available:
+A modern and responsive **gym website** built using **React (Vite)** and **Tailwind CSS**.
+This project was created to provide an online presence for a local gym and showcase facilities, membership plans, trainers, and contact information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://bodypower-gym.vercel.app
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Highlights
+
+* Built a fully responsive fitness gym website using **React and Tailwind CSS**
+* Implemented **modern UI components** with reusable structure
+* Designed **membership plan cards and trainer sections**
+* Added **BMI calculator and fitness-related sections**
+* Integrated **Google Maps for gym location**
+* Deployed the project using **Vercel**
+* Optimized layout for **mobile, tablet, and desktop screens**
+
+---
+
+## Gym Information
+
+**Gym Name:** Body Power Gym
+**Rating:** 4.4 ⭐ (387 reviews)
+
+**Address**
+1st Floor, Trimurti Enclave, Plot No. 6
+Opposite Saksham Mall, Sector 9, Kamothe
+Panvel, Navi Mumbai, Maharashtra 410209
+
+**Phone / WhatsApp**
++91 70458 13690
+
+**Gym Timings**
+
+| Day               | Time               |
+| ----------------- | ------------------ |
+| Monday – Saturday | 5:00 AM – 11:00 PM |
+| Sunday            | 6:00 PM – 10:00 PM |
+
+---
+
+## Tech Stack
+
+* React (Vite)
+* Tailwind CSS
+* JavaScript
+* HTML5
+* Vercel (Deployment)
+
+---
+
+## Project Structure
+
+```
+bodypower-gym
+│
+├── public
+├── src
+│   ├── components
+│   ├── pages
+│   ├── assets
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+└── README.md
+```
+
+---
+
+## Future Improvements
+
+* Online membership management system
+* Secure authentication for members
+* Admin dashboard for gym management
+* Backend integration with Node.js
+* Online class booking system
+
+---
+
+## Purpose of the Project
+
+This project was built to:
+
+* Practice **modern React frontend development**
+* Build a **real-world business website**
+* Improve **UI/UX and responsive design skills**
+* Showcase a **portfolio-ready project**
+
+---
+
+## Author
+
+**Jayesh Verma**
+Computer Science Graduate
+Web Developer | Cybersecurity Enthusiast
