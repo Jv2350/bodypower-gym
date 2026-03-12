@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   FaDumbbell,
   FaMapMarkerAlt,
@@ -8,20 +8,20 @@ import {
   FaFacebook,
   FaInstagram,
   FaTwitter,
-  FaWhatsapp
-} from 'react-icons/fa';
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
-
+import bodypower from "../assets/logo.png";
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Membership Plans', path: '/membership' },
-    { name: 'Our Trainers', path: '/trainers' },
-    { name: 'Facilities', path: '/facilities' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Membership Plans", path: "/membership" },
+    { name: "Our Trainers", path: "/trainers" },
+    { name: "Facilities", path: "/facilities" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -31,7 +31,14 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="bg-primary p-2 rounded-lg">
-                <FaDumbbell className="text-2xl text-white" />
+                {/* <FaDumbbell className="text-2xl text-white" /> */}
+                <div className="bg-white rounded-lg group-hover:scale-110 transition-transform duration-300 w-12 h-12 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={bodypower}
+                    alt="Body Power Gym Logo"
+                    className="w-full h-full object-contain scale-100 transform"
+                  />
+                </div>
               </div>
               <div>
                 <h3 className="text-xl font-heading font-bold text-white">
