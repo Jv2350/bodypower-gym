@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaCalculator } from 'react-icons/fa';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaCalculator } from "react-icons/fa";
 
 const BMICalculator = () => {
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState(null);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
 
   const calculateBMI = (e) => {
     e.preventDefault();
@@ -17,23 +17,23 @@ const BMICalculator = () => {
       setBmi(bmiValue);
 
       if (bmiValue < 18.5) {
-        setCategory('Underweight');
+        setCategory("Underweight");
       } else if (bmiValue >= 18.5 && bmiValue < 25) {
-        setCategory('Normal weight');
+        setCategory("Normal weight");
       } else if (bmiValue >= 25 && bmiValue < 30) {
-        setCategory('Overweight');
+        setCategory("Overweight");
       } else {
-        setCategory('Obese');
+        setCategory("Obese");
       }
     }
   };
 
   const getCategoryColor = () => {
-    if (category === 'Underweight') return 'text-blue-400';
-    if (category === 'Normal weight') return 'text-green-400';
-    if (category === 'Overweight') return 'text-yellow-400';
-    if (category === 'Obese') return 'text-red-400';
-    return 'text-gray-400';
+    if (category === "Underweight") return "text-blue-400";
+    if (category === "Normal weight") return "text-green-400";
+    if (category === "Overweight") return "text-yellow-400";
+    if (category === "Obese") return "text-red-400";
+    return "text-gray-400";
   };
 
   return (
@@ -108,13 +108,13 @@ const BMICalculator = () => {
           <div className="mt-6 pt-6 border-t border-gray-700">
             <p className="text-sm text-gray-400 mb-3">BMI Categories:</p>
             <div className="grid grid-cols-2 gap-2 text-xs text-left">
-              <div className="text-blue-400">{'< 18.5'}</div>
+              <div className="text-blue-400">{"< 18.5"}</div>
               <div className="text-gray-300">Underweight</div>
               <div className="text-green-400">18.5 - 24.9</div>
               <div className="text-gray-300">Normal weight</div>
               <div className="text-yellow-400">25 - 29.9</div>
               <div className="text-gray-300">Overweight</div>
-              <div className="text-red-400">{'≥ 30'}</div>
+              <div className="text-red-400">{"≥ 30"}</div>
               <div className="text-gray-300">Obese</div>
             </div>
           </div>

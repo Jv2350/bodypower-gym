@@ -1,75 +1,90 @@
-import { motion } from 'framer-motion';
-import { FaAppleAlt, FaCarrot, FaDrumstickBite, FaLeaf } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaAppleAlt, FaCarrot, FaDrumstickBite, FaLeaf } from "react-icons/fa";
 
 const DietPlans = () => {
   const plans = [
     {
       icon: <FaLeaf className="text-4xl" />,
-      title: 'Weight Loss Diet',
-      calories: '1500-1800 cal/day',
-      description: 'Balanced calorie deficit for sustainable weight loss',
+      title: "Weight Loss Diet",
+      calories: "1500-1800 cal/day",
+      description: "Balanced calorie deficit for sustainable weight loss",
       features: [
-        'High protein, low carb',
-        'Rich in fiber',
-        'Portion controlled meals',
-        'Hydration guidelines'
-      ]
+        "High protein, low carb",
+        "Rich in fiber",
+        "Portion controlled meals",
+        "Hydration guidelines",
+      ],
     },
     {
       icon: <FaDrumstickBite className="text-4xl" />,
-      title: 'Muscle Gain Diet',
-      calories: '2500-3000 cal/day',
-      description: 'Calorie surplus with optimal protein intake',
+      title: "Muscle Gain Diet",
+      calories: "2500-3000 cal/day",
+      description: "Calorie surplus with optimal protein intake",
       features: [
-        'High protein meals',
-        'Complex carbohydrates',
-        'Healthy fats',
-        'Post-workout nutrition'
-      ]
+        "High protein meals",
+        "Complex carbohydrates",
+        "Healthy fats",
+        "Post-workout nutrition",
+      ],
     },
     {
       icon: <FaAppleAlt className="text-4xl" />,
-      title: 'Maintenance Diet',
-      calories: '2000-2200 cal/day',
-      description: 'Balanced nutrition for maintaining current weight',
+      title: "Maintenance Diet",
+      calories: "2000-2200 cal/day",
+      description: "Balanced nutrition for maintaining current weight",
       features: [
-        'Balanced macros',
-        'Whole foods focus',
-        'Flexible meal timing',
-        'Nutrient dense options'
-      ]
+        "Balanced macros",
+        "Whole foods focus",
+        "Flexible meal timing",
+        "Nutrient dense options",
+      ],
     },
     {
       icon: <FaCarrot className="text-4xl" />,
-      title: 'Vegetarian Plan',
-      calories: 'Customized',
-      description: 'Plant-based nutrition for all fitness goals',
+      title: "Vegetarian Plan",
+      calories: "Customized",
+      description: "Plant-based nutrition for all fitness goals",
       features: [
-        'Plant protein sources',
-        'Complete amino acids',
-        'Iron and B12 focus',
-        'Varied meal options'
-      ]
-    }
+        "Plant protein sources",
+        "Complete amino acids",
+        "Iron and B12 focus",
+        "Varied meal options",
+      ],
+    },
   ];
 
   const sampleMeals = [
     {
-      meal: 'Breakfast',
-      options: ['Oatmeal with fruits', 'Egg white omelette', 'Greek yogurt bowl', 'Protein smoothie']
+      meal: "Breakfast",
+      options: [
+        "Oatmeal with fruits",
+        "Egg white omelette",
+        "Greek yogurt bowl",
+        "Protein smoothie",
+      ],
     },
     {
-      meal: 'Lunch',
-      options: ['Grilled chicken salad', 'Brown rice with dal', 'Quinoa bowl', 'Paneer wrap']
+      meal: "Lunch",
+      options: [
+        "Grilled chicken salad",
+        "Brown rice with dal",
+        "Quinoa bowl",
+        "Paneer wrap",
+      ],
     },
     {
-      meal: 'Dinner',
-      options: ['Grilled fish with vegetables', 'Chicken breast with sweet potato', 'Vegetable stir fry', 'Lentil curry']
+      meal: "Dinner",
+      options: [
+        "Grilled fish with vegetables",
+        "Chicken breast with sweet potato",
+        "Vegetable stir fry",
+        "Lentil curry",
+      ],
     },
     {
-      meal: 'Snacks',
-      options: ['Mixed nuts', 'Protein bar', 'Fruits', 'Roasted chickpeas']
-    }
+      meal: "Snacks",
+      options: ["Mixed nuts", "Protein bar", "Fruits", "Roasted chickpeas"],
+    },
   ];
 
   return (
@@ -100,12 +115,19 @@ const DietPlans = () => {
               className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-primary transition-all duration-300"
             >
               <div className="text-primary mb-4">{plan.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-2">{plan.title}</h3>
-              <p className="text-primary text-sm font-semibold mb-3">{plan.calories}</p>
+              <h3 className="text-xl font-bold text-white mb-2">
+                {plan.title}
+              </h3>
+              <p className="text-primary text-sm font-semibold mb-3">
+                {plan.calories}
+              </p>
               <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
               <ul className="space-y-2">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="text-gray-300 text-sm flex items-start">
+                  <li
+                    key={idx}
+                    className="text-gray-300 text-sm flex items-start"
+                  >
                     <span className="text-primary mr-2">✓</span>
                     <span>{feature}</span>
                   </li>

@@ -1,4 +1,4 @@
-const isBrowser = typeof window !== 'undefined';
+const isBrowser = typeof window !== "undefined";
 
 const readCollection = (key) => {
   if (!isBrowser) {
@@ -25,22 +25,22 @@ const writeCollection = (key, items) => {
 const createRecord = (payload) => ({
   id: crypto.randomUUID(),
   created_at: new Date().toISOString(),
-  ...payload
+  ...payload,
 });
 
 export const saveContactInquiry = (inquiry) => {
-  const key = 'bodypower_contact_inquiries';
+  const key = "bodypower_contact_inquiries";
   const items = readCollection(key);
-  const record = createRecord({ ...inquiry, status: 'pending' });
+  const record = createRecord({ ...inquiry, status: "pending" });
   items.unshift(record);
   writeCollection(key, items);
   return record;
 };
 
 export const saveMembershipApplication = (application) => {
-  const key = 'bodypower_membership_applications';
+  const key = "bodypower_membership_applications";
   const items = readCollection(key);
-  const record = createRecord({ ...application, status: 'pending' });
+  const record = createRecord({ ...application, status: "pending" });
   items.unshift(record);
   writeCollection(key, items);
   return record;

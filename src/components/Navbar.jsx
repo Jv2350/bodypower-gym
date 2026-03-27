@@ -4,7 +4,6 @@ import { FaBars, FaTimes, FaDumbbell, FaPhone } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import bodypower from "../assets/logo.png";
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();

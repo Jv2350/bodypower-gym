@@ -18,13 +18,13 @@ https://bodypower-gym.vercel.app
 
 ## Project Highlights
 
-* Built a fully responsive fitness gym website using **React and Tailwind CSS**
-* Implemented **modern UI components** with reusable structure
-* Designed **membership plan cards and trainer sections**
-* Added **BMI calculator and fitness-related sections**
-* Integrated **Google Maps for gym location**
-* Deployed the project using **Vercel**
-* Optimized layout for **mobile, tablet, and desktop screens**
+- Built a fully responsive fitness gym website using **React and Tailwind CSS**
+- Implemented **modern UI components** with reusable structure
+- Designed **membership plan cards and trainer sections**
+- Added **BMI calculator and fitness-related sections**
+- Integrated **Google Maps for gym location**
+- Deployed the project using **Vercel**
+- Optimized layout for **mobile, tablet, and desktop screens**
 
 ---
 
@@ -52,11 +52,11 @@ Panvel, Navi Mumbai, Maharashtra 410209
 
 ## Tech Stack
 
-* React (Vite)
-* Tailwind CSS
-* JavaScript
-* HTML5
-* Vercel (Deployment)
+- React (Vite)
+- Tailwind CSS
+- JavaScript
+- HTML5
+- Vercel (Deployment)
 
 ---
 
@@ -81,11 +81,11 @@ bodypower-gym
 
 ## Future Improvements
 
-* Online membership management system
-* Secure authentication for members
-* Admin dashboard for gym management
-* Backend integration with Node.js
-* Online class booking system
+ Online membership management system
+- Secure authentication for members
+- Admin dashboard for gym management
+- Backend integration with Node.js
+- Online class booking system
 
 ---
 
@@ -93,10 +93,10 @@ bodypower-gym
 
 This project was built to:
 
-* Practice **modern React frontend development**
-* Build a **real-world business website**
-* Improve **UI/UX and responsive design skills**
-* Showcase a **portfolio-ready project**
+- Practice **modern React frontend development**
+- Build a **real-world business website**
+- Improve **UI/UX and responsive design skills**
+- Showcase a **portfolio-ready project**
 
 ---
 
