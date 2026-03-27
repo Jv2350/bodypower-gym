@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { supabase } from '../lib/supabase';
+import { galleryImages } from '../data/gymData';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -11,12 +11,11 @@ const Gallery = () => {
     fetchImages();
   }, []);
 
-  const fetchImages = async () => {
-    const { data } = await supabase
-      .from('gallery_images')
-      .select('*')
-      .order('created_at', { ascending: false });
-    if (data) setImages(data);
+  const fetchImages = () => {
+    const data = [...galleryImages].sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    );
+    setImages(data);
   };
 
   const categories = [

@@ -10,10 +10,10 @@ import {
   FaCheckCircle
 } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
 import BMICalculator from '../components/BMICalculator';
 import WorkoutPlans from '../components/WorkoutPlans';
 import DietPlans from '../components/DietPlans';
+import { memberReviews, membershipPlans } from '../data/gymData';
 
 const Home = () => {
   const [reviews, setReviews] = useState([]);
@@ -24,39 +24,19 @@ const Home = () => {
     fetchPlans();
   }, []);
 
-  useEffect(() => {
-    testConnection();
-  }, []);
-
-  const testConnection = async () => {
-    const { data, error } = await supabase
-      .from("membership_plans")
-      .select("*");
-
-    if (error) {
-      console.log("Supabase connection failed ❌", error);
-    } else {
-      console.log("Supabase connected ✅", data);
-    }
+  const fetchReviews = () => {
+    const data = [...memberReviews]
+      .filter((review) => review.is_approved)
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+      .slice(0, 3);
+    setReviews(data);
   };
 
-  const fetchReviews = async () => {
-    const { data } = await supabase
-      .from('member_reviews')
-      .select('*')
-      .eq('is_approved', true)
-      .order('created_at', { ascending: false })
-      .limit(3);
-    if (data) setReviews(data);
-  };
-
-  const fetchPlans = async () => {
-    const { data } = await supabase
-      .from('membership_plans')
-      .select('*')
-      .order('duration_months', { ascending: true })
-      .limit(3);
-    if (data) setPlans(data);
+  const fetchPlans = () => {
+    const data = [...membershipPlans]
+      .sort((a, b) => a.duration_months - b.duration_months)
+      .slice(0, 3);
+    setPlans(data);
   };
 
   const benefits = [

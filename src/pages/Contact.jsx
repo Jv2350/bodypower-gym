@@ -7,7 +7,7 @@ import {
   FaClock,
   FaWhatsapp
 } from 'react-icons/fa';
-import { supabase } from '../lib/supabase';
+import { saveContactInquiry } from '../lib/localStorage';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,20 +23,20 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const { error } = await supabase.from('contact_inquiries').insert([formData]);
-
-    setIsSubmitting(false);
-
-    if (error) {
-      setSubmitStatus('error');
-    } else {
+    try {
+      saveContactInquiry(formData);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('Failed to save contact inquiry locally', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

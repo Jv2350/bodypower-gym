@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaTimes } from 'react-icons/fa';
-import { supabase } from '../lib/supabase';
+import { membershipPlans } from '../data/gymData';
+import { saveMembershipApplication } from '../lib/localStorage';
 
 const Membership = () => {
   const [plans, setPlans] = useState([]);
@@ -19,12 +20,11 @@ const Membership = () => {
     fetchPlans();
   }, []);
 
-  const fetchPlans = async () => {
-    const { data } = await supabase
-      .from('membership_plans')
-      .select('*')
-      .order('duration_months', { ascending: true });
-    if (data) setPlans(data);
+  const fetchPlans = () => {
+    const data = [...membershipPlans].sort(
+      (a, b) => a.duration_months - b.duration_months
+    );
+    setPlans(data);
   };
 
   const handleApply = (plan) => {
@@ -36,31 +36,29 @@ const Membership = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const { error } = await supabase.from('membership_applications').insert([
-      {
+    try {
+      saveMembershipApplication({
         full_name: formData.full_name,
         email: formData.email,
         phone: formData.phone,
         plan_id: selectedPlan.id
-      }
-    ]);
-
-    setIsSubmitting(false);
-
-    if (error) {
-      setSubmitStatus('error');
-    } else {
+      });
       setSubmitStatus('success');
       setFormData({ full_name: '', email: '', phone: '' });
       setTimeout(() => {
         setShowForm(false);
         setSubmitStatus(null);
       }, 2000);
+    } catch (error) {
+      console.error('Failed to save membership application locally', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

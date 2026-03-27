@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaMedal } from 'react-icons/fa';
-import { supabase } from '../lib/supabase';
+import { trainers as trainerData } from '../data/gymData';
 
 const Trainers = () => {
   const [trainers, setTrainers] = useState([]);
@@ -10,12 +10,11 @@ const Trainers = () => {
     fetchTrainers();
   }, []);
 
-  const fetchTrainers = async () => {
-    const { data } = await supabase
-      .from('trainers')
-      .select('*')
-      .order('created_at', { ascending: true });
-    if (data) setTrainers(data);
+  const fetchTrainers = () => {
+    const data = [...trainerData].sort(
+      (a, b) => new Date(a.created_at) - new Date(b.created_at)
+    );
+    setTrainers(data);
   };
 
   return (
